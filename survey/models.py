@@ -4,10 +4,10 @@ from otree.api import (
 )
 
 
-author = 'Your name here'
+author = 'Christian'
 
 doc = """
-Your app description
+Our first survey app.
 """
 
 
@@ -26,4 +26,21 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    age = models.PositiveIntegerField(
+        max=120,
+        verbose_name="How old are you?",
+        doc="collect age data between 0 and 120"
+    )
+
+    field_of_studies = models.CharField(
+        blank=True,
+        verbose_name="What do you study if at all?",
+        doc="free text input of field of studies"
+    )
+
+    likes_experiment = models.CharField(
+        choices=["Yes of course!", "No and I don't have a witty comment", "maybe"],
+        widget=widgets.RadioSelect(),
+        verbose_name="Did you like the experiment?",
+        doc="yes, no , maybe input as a string"
+    )
