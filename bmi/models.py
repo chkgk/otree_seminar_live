@@ -26,8 +26,8 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    height = models.FloatField(verbose_name="Height?")
-    weight = models.FloatField(verbose_name="Weight?")
+    height = models.FloatField(min=0, verbose_name="Height?")
+    weight = models.FloatField(min=0, verbose_name="Weight?")
 
     bmi = models.FloatField()
     bmi_class = models.CharField()
@@ -42,5 +42,5 @@ class Player(BasePlayer):
         if self.bmi > 25:
             self.bmi_class = "overweight"
 
-         if 18.5 <= self.bmi <= 25:
+        if 18.5 <= self.bmi <= 25:
             self.bmi_class = "normal"  
