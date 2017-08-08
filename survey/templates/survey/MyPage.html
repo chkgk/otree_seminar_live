@@ -2,19 +2,13 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Page title
+    Body Height and Weight
 {% endblock %}
 
 {% block content %}
 
-<!--
-Documentation on how to write a django template here:
-https://docs.djangoproject.com/en/1.8/ref/templates/language/
-
-Bootstrap comes pre-loaded, so you can use any Bootstrap elements:
-http://getbootstrap.com/components/
-
--->
+    {% formfield player.height %}
+    {% formfield player.weight %}
 
     {% next_button %}
 

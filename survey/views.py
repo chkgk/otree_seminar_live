@@ -5,14 +5,11 @@ from .models import Constants
 
 
 class MyPage(Page):
-    pass
+    form_model = models.Player
+    form_fields = ['weight', 'height']
 
-
-class ResultsWaitPage(WaitPage):
-
-    def after_all_players_arrive(self):
-        pass
-
+    def before_next_page(self):
+        self.player.calculate_bmi()
 
 class Results(Page):
     pass
@@ -20,6 +17,5 @@ class Results(Page):
 
 page_sequence = [
     MyPage,
-    ResultsWaitPage,
     Results
 ]
