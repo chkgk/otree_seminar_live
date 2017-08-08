@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    You win, if the coin shows 'heads'.<br>
+    The coin shows: {{ player.lottery_outcome }}. <br>
+    Your final payoff is {{ player.payoff }}.
+    {% next_button %}
+{% endblock %}
+
+
