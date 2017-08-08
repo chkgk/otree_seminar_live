@@ -118,6 +118,12 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'app_sequence': ['survey'],
         'participation_fee': 3.00
+    },
+    {
+        'name': 'bmi',
+        'display_name': 'Our first little bmi survey',
+        'num_demo_participants': 1,
+        'app_sequence': ['bmi'],
     }
 ]
 

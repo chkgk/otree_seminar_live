@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    BMI Result
+{% endblock %}
+
+{% block content %}
+    
+    Your BMI is: {{ player.bmi }}, which is considered {{ player.bmi_class }}
+
+
+    {% next_button %}
+{% endblock %}
+
+

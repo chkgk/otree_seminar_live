@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Height and Weight input
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.weight %}
+    {% formfield player.height %}
+
+    {% next_button %}
+
+{% endblock %}
