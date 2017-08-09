@@ -114,26 +114,26 @@ SESSION_CONFIG_DEFAULTS = {
 SESSION_CONFIGS = [
     {
         'name': 'survey',
-        'display_name': 'Our first little survey',
+        'display_name': '1: Survey & BMI',
         'num_demo_participants': 1,
         'app_sequence': ['survey'],
         'participation_fee': 3.00
     },
     {
-        'name': 'bmi',
-        'display_name': 'Our first little bmi survey',
-        'num_demo_participants': 1,
-        'app_sequence': ['bmi'],
-    },
-    {
         'name': 'fortune',
-        'display_name': 'Our first little lottery',
+        'display_name': '2: Fortune',
         'num_demo_participants': 1,
         'app_sequence': ['fortune'],
     },
     {
+        'name': 'prisoners_dilemma',
+        'display_name': "3: Prisoners' Dilemma",
+        'num_demo_participants': 2,
+        'app_sequence': ['prisoners_dilemma'],
+    },
+    {
         'name': 'ultimatum_game',
-        'display_name': 'Ultimatum game',
+        'display_name': '4: Ultimatum game',
         'num_demo_participants': 2,
         'app_sequence': ['ultimatum_game'],
     }

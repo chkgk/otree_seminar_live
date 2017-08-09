@@ -4,18 +4,18 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class MyPage(Page):
+class Demographics(Page):
     form_model = models.Player
-    form_fields = ['weight', 'height']
+    form_fields = ['age', 'gender', 'field_of_studies', 'height', 'weight']
 
     def before_next_page(self):
         self.player.calculate_bmi()
 
-class Results(Page):
+class BMI_Result(Page):
     pass
 
 
 page_sequence = [
-    MyPage,
-    Results
+    Demographics,
+    BMI_Result
 ]

@@ -2,13 +2,11 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    BMI Result
+    Results
 {% endblock %}
 
 {% block content %}
-
-    Your BMI is: {{ player.bmi }}.
-
+    Your BMI is {{ player.bmi }}. Accordingly, you are {{ player.bmi_classification }}.
     {% next_button %}
 {% endblock %}
 

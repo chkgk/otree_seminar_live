@@ -4,10 +4,10 @@ from otree.api import (
 )
 
 
-author = 'Christian'
+author = 'Christian König'
 
 doc = """
-Our first survey app.
+My first Survey App
 """
 
 
@@ -26,10 +26,24 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    weight = models.FloatField(min=0, verbose_name="Weight?")
-    height = models.FloatField(min=0, verbose_name="Height?")
+    age = models.PositiveIntegerField()
+    gender = models.CharField(
+        choices=['male', 'female', 'other', 'prefer not to tell'],
+        widget=widgets.RadioSelectHorizontal
+    )
+    field_of_studies = models.CharField()
+    height = models.FloatField()
+    weight = models.FloatField()
 
     bmi = models.FloatField()
+    bmi_classification = models.CharField()
 
     def calculate_bmi(self):
         self.bmi = round(self.weight / self.height**2, 2)
+
+        if self.bmi  < 18.5:
+            self.bmi_classification = 'underweight'
+        elif self.bmi > 25:
+            self.bmi_classification = 'overweight'
+        else:
+            self.bmi_classification = 'normal'

@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Demographics
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.age with label="How old are you?" %}
+    {% formfield player.gender with label="What's your gender?" %}
+    {% formfield player.field_of_studies with label="What's your field of studies?" %}
+    {% formfield player.height with label="How tall are you (m)?" %}
+    {% formfield player.weight with label="How much do you weigh (kg)?" %}
+
+    {% next_button %}
+
+{% endblock %}

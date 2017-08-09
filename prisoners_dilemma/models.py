@@ -38,11 +38,10 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     decision = models.SmallIntegerField(
-                choices=[[0, 'stay silent'], [1, 'betray']],
-                verbose_name="I choose to:",
-                widget=widgets.RadioSelect()
-            )
+        choices=[(0, 'stay silent'), (1, 'betray')],
+        verbose_name="I choose to:",
+        widget=widgets.RadioSelect()
+    )
     years_in_prison = models.PositiveIntegerField()
 
-    others_decision = models.SmallIntegerField(
-                choices=[[0, 'stay silent'], [1, 'betray']])
+    others_decision = models.SmallIntegerField(choices=[(0, 'stay silent'), (1, 'betray')])

@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Decision
+{% endblock %}
+
+{% block content %}
+
+    <table style="width: 352px;">
+        <tbody>
+            <tr style="height: 21px;">
+                <td style="width: 156px; height: 82px;" colspan="2" rowspan="2">Expexted Years in Prison</td>
+                <td style="width: 210px; height: 21px; text-align: center;" colspan="4">Other Player</td>
+            </tr>
+            <tr style="height: 61px;">
+                <td style="width: 91px; height: 61px; text-align: center;" colspan="2">stay silent</td>
+                <td style="width: 119px; height: 61px; text-align: center;" colspan="2">betray</td>
+            </tr>
+            <tr style="height: 21px;">
+                <td style="width: 43px; height: 64px;" rowspan="2">You</td>
+                <td style="width: 113px; height: 21px;">stay silent</td>
+                <td style="width: 50.25px; height: 21px; text-align: center;">1</td>
+                <td style="width: 40.75px; height: 21px; text-align: center;">1</td>
+                <td style="width: 63px; height: 21px; text-align: center;">3</td>
+                <td style="width: 56px; height: 21px; text-align: center;">0</td>
+            </tr>
+            <tr style="height: 43px;">
+                <td style="width: 113px; height: 43px;">betray</td>
+                <td style="width: 50.25px; height: 43px; text-align: center;">0</td>
+                <td style="width: 40.75px; height: 43px; text-align: center;">3</td>
+                <td style="width: 63px; height: 43px; text-align: center;">2</td>
+                <td style="width: 56px; height: 43px; text-align: center;">2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% formfield player.decision %}
+
+    {% next_button %}
+
+{% endblock %}

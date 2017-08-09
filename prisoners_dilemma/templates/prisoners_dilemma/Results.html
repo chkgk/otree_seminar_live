@@ -7,7 +7,10 @@
 
 {% block content %}
 
-    You spend {{ player.years_in_prison }} years in prison.
+    You chose to {{ decision }}.<br>
+    The other player chose to {{ others_decision }}.<br>
+    
+    You go to prison for {{ player.years_in_prison }} years.
 
     {% next_button %}
 {% endblock %}
