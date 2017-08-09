@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Proposal
+{% endblock %}
+
+{% block content %}
+    
+    Propose a split to the responder by indicating how much of the {{ Constants.pot_size }} you want to keep. S/he gets the remainder if s/he accepts. Both of you receive 0 if the other player rejects.
+    {% formfield group.proposer_share %}
+
+    {% next_button %}
+
+{% endblock %}

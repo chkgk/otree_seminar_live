@@ -127,9 +127,15 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'fortune',
-        'display_name': 'Our first litle lottery',
+        'display_name': 'Our first little lottery',
         'num_demo_participants': 1,
         'app_sequence': ['fortune'],
+    },
+    {
+        'name': 'ultimatum_game',
+        'display_name': 'Ultimatum game',
+        'num_demo_participants': 2,
+        'app_sequence': ['ultimatum_game'],
     }
 ]
 

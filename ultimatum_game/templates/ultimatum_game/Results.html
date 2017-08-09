@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    {% if group.accepted %}
+        The split was accepted.
+    {% else %}
+        The split was not accepted.
+    {% endif %}
+
+    Your final payoff is {{ player.payoff }}.
+
+    {% next_button %}
+{% endblock %}
+
+

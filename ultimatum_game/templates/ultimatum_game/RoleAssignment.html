@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Role Assignment
+{% endblock %}
+
+{% block content %}
+
+    Welcome. The pot size is {{ Constants.pot_size }}.
+    You are the {{ player.role }}.
+
+    {% next_button %}
+
+{% endblock %}

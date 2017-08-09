@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Response
+{% endblock %}
+
+{% block content %}
+
+    The proposer wants to keep {{ group.proposer_share }} of the {{ Constants.pot_size }} for him/herself. You receive the remainder {{ remainder }}.
+
+    {% formfield group.accepted %}
+
+    {% next_button %}
+
+{% endblock %}
