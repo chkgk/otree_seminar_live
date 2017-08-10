@@ -142,7 +142,14 @@ SESSION_CONFIGS = [
         'display_name': '06 Treatment manipulation demo',
         'num_demo_participants': 2,
         'app_sequence': ['treatment_demo'],
-        # 'treatment': "high"
+        #'treatment': "high"
+    },
+    {
+        'name': 'quiz',
+        'display_name': '07 Quiz',
+        'num_demo_participants': 1,
+        'app_sequence': ['quiz'],
+        #'treatment': "high"
     }
 ]
 

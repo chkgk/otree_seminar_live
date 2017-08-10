@@ -29,7 +29,7 @@ class Subsession(BaseSubsession):
     def before_session_starts(self):
         for player in self.get_players():
             # half split by even / odd:
-            # player.treatment = "low" if player.id_in_group % 2 == 0 else "high"
+            # player.treatment = "low" if player.id % 2 == 0 else "high"
 
             # random selection
             # player.treatment = random.choice(['low', 'high'])
@@ -39,7 +39,10 @@ class Subsession(BaseSubsession):
                 player.treatment = self.session.config['treatment']
             else:
                 player.treatment = random.choice(['low', 'high'])
+
             player.endowment = Constants.high_endowment if player.treatment == "high" else Constants.low_endowment
+
+
 
 
 class Group(BaseGroup):
