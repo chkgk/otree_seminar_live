@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    You bet {{ player.investment }} and {{ outcome }} the lottery.<br>
+    Your final payoff is {{ player.payoff }}.
+    {% next_button %}
+{% endblock %}
+
+

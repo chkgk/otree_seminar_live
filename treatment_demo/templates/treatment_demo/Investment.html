@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Investment decision
+{% endblock %}
+
+{% block content %}
+
+    Your endowment is {{ player.endowment }}.
+
+    {% formfield player.investment %}
+
+    {% next_button %}
+
+{% endblock %}

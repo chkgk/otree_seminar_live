@@ -136,6 +136,13 @@ SESSION_CONFIGS = [
         'display_name': '4: Ultimatum game',
         'num_demo_participants': 2,
         'app_sequence': ['ultimatum_game'],
+    },
+    {
+        'name': 'treatment_demo',
+        'display_name': '06 Treatment manipulation demo',
+        'num_demo_participants': 2,
+        'app_sequence': ['treatment_demo'],
+        # 'treatment': "high"
     }
 ]
 
