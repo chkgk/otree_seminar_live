@@ -16,6 +16,7 @@ if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
 else:
     DEBUG = True
 
+
 ADMIN_USERNAME = 'admin'
 
 # for security, best to set admin password in an environment variable
@@ -175,14 +176,10 @@ SESSION_CONFIGS = [
         'display_name': 'Extra 1: Multi-round lottery',
         'num_demo_participants': 1,
         'app_sequence': ['multi_round_lottery']
-    },
-    {
-        'name': 'real_time_data',
-        'display_name': 'Extra 2: Real time messages between players',
-        'num_demo_participants': 2,
-        'app_sequence': ['real_time_data']
     }
 ]
+
+
 
 # anything you put after the below line will override
 # oTree's default settings. Use with caution.
