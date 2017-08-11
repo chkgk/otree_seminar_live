@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Final Result
+{% endblock %}
+
+{% block content %}
+    Round {{ player.selected_round }} was randomly selected for payoff.<br>
+    You bet {{ investment }} and {{ outcome }} the lottery.<br>
+    Your final payoff is {{ player.payoff }}.
+
+    {% next_button %}
+{% endblock %}
+
+

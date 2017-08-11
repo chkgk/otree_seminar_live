@@ -160,10 +160,16 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'pie_chart',
-        'display_name': '7: A pie chart example using highcharts',
+        'display_name': '8: A pie chart example using highcharts',
         'num_demo_participants': 1,
         'app_sequence': ['pie_chart']
-    }
+    },
+    {
+        'name': 'multi_round_lottery',
+        'display_name': 'Extra 1: Multi-round lottery',
+        'num_demo_participants': 1,
+        'app_sequence': ['multi_round_lottery']
+    },
 ]
 
 # anything you put after the below line will override

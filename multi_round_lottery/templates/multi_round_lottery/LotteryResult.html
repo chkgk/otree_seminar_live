@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Lottery Result ({{player.round_number}} of {{ Constants.num_rounds }})
+{% endblock %}
+
+{% block content %}
+
+    This round, you {{ outcome }} the lottery.
+
+    {% next_button %}
+
+{% endblock %}
