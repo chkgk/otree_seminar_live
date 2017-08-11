@@ -1,0 +1,66 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script type="text/javascript">
+        var p1_share = {{ group.p1_share|json }};
+        var p2_share = {{ group.p2_share|json }};
+
+        //console.log(p1_share, typeof(p1_share), p2_share, typeof(p2_share));
+        Highcharts.chart('container', {
+          chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+          },
+          title: {
+            text: 'Points to Players'
+          },
+          tooltip: {
+            pointFormat: '{series.name}: <b>{point.y}</b>'
+          },
+          plotOptions: {
+            pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.y}',
+                style: {
+                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+              }
+            }
+          },
+          series: [{
+            name: 'Allocation',
+            colorByPoint: true,
+            data: [{
+              name: 'Player 1',
+              y: p1_share
+            }, {
+              name: 'Player 2',
+              y: p2_share,
+              sliced: true,
+              selected: true
+            }]
+          }]
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+    {% next_button %}
+{% endblock %}
+
+

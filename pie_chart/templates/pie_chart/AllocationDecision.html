@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Allocation Decision
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+    // define a function that sets p2 share
+    function set_p2_share() {
+        var pie_size = {{ Constants.pie_size|json }};
+        var p1_share = $('#id_p1_share').val();
+        $("#id_p2_share").html(pie_size-p1_share);
+    }
+
+    // call the function above once the page is fully loaded
+    set_p2_share();
+    
+    // make sure to always call the function, when the slider changes
+    $(document).on('change input', '#id_p1_share', set_p2_share)
+    
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    {% formfield group.p1_share %}
+    <p><strong>P2 share:</strong> <span id='id_p2_share'></span></p>
+
+    {% next_button %}
+
+{% endblock %}

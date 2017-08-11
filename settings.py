@@ -147,17 +147,22 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'treatment_demo',
-        'display_name': '06 Treatment manipulation demo',
+        'display_name': '5: Treatment manipulation demo',
         'num_demo_participants': 2,
         'app_sequence': ['treatment_demo'],
         #'treatment': "high"
     },
     {
         'name': 'quiz',
-        'display_name': '07 Quiz',
+        'display_name': '6: Quiz',
         'num_demo_participants': 1,
         'app_sequence': ['quiz'],
-        #'treatment': "high"
+    },
+    {
+        'name': 'pie_chart',
+        'display_name': '7: A pie chart example using highcharts',
+        'num_demo_participants': 1,
+        'app_sequence': ['pie_chart']
     }
 ]
 
