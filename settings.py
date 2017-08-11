@@ -65,7 +65,7 @@ USE_POINTS = False
 LANGUAGE_CODE = 'en'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-INSTALLED_APPS = ['otree']
+INSTALLED_APPS = ['otree', 'otreechat']
 
 # SENTRY_DSN = ''
 
@@ -159,6 +159,12 @@ SESSION_CONFIGS = [
         'app_sequence': ['quiz'],
     },
     {
+        'name': 'chat_example',
+        'display_name': '7: A chat example',
+        'num_demo_participants': 2,
+        'app_sequence': ['chat_example']
+    },
+    {
         'name': 'pie_chart',
         'display_name': '8: A pie chart example using highcharts',
         'num_demo_participants': 1,
@@ -170,6 +176,12 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'app_sequence': ['multi_round_lottery']
     },
+    {
+        'name': 'real_time_data',
+        'display_name': 'Extra 2: Real time messages between players',
+        'num_demo_participants': 2,
+        'app_sequence': ['real_time_data']
+    }
 ]
 
 # anything you put after the below line will override

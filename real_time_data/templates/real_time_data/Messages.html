@@ -1,0 +1,58 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Messages
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        var socket = new WebSocket(ws_scheme + '://' + window.location.host + "/real_time_data/group{{group.id}}");
+        // Handle any errors that occur.
+        
+        socket.onerror = function(error) {
+            console.log('WebSocket Error: ' + error);
+        };
+
+        socket.onopen = function(event) {
+            console.log('connected to oTree');
+        };
+
+        // Handle messages sent by the server.
+        socket.onmessage = function(event) {
+            message = JSON.parse(event.data);
+            // console.log(message)
+            $('#list_of_numbers').append("<li>Player " + message['player'] + ": " + message['number'] + "</li>");
+        };
+        
+        // Show a disconnected message when the WebSocket is closed.
+        socket.onclose = function(event) {
+            console.log('disconnected from oTree');
+        };
+
+        function sendmessage() {
+            var msg = {
+                player: {{ player.id }},
+                number: Math.floor(Math.random() * 11),
+            };
+            if(socket.readyState === socket.OPEN) {
+                console.log(msg);
+                socket.send(JSON.stringify(msg));
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <p>Push the button to send a random number</p>
+    <input id='number_button' class="btn  btn-large btn-primary next-button" onclick='sendmessage()' type="button"  value="send number">
+
+    <h3>List of random numbers between 0 and 10</h3>
+    <ul id="list_of_numbers">
+
+    </ul>
+    <h3>Leave</h3>
+    {% next_button %}
+
+{% endblock %}
