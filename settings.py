@@ -110,6 +110,14 @@ SESSION_CONFIG_DEFAULTS = {
     'mturk_hit_settings': mturk_hit_settings,
 }
 
+ROOMS = [
+    {
+        'name': 'awi_lab',
+        'display_name': 'AWI Experimentallabor',
+        'participant_label_file': 'participant_labels.txt'
+    }
+]
+
 
 SESSION_CONFIGS = [
     {
